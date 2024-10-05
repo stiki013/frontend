@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>TechStart - Innovate with AI</title>
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-200">
+    <!-- Navbar -->
+    <header class="bg-white dark:bg-gray-800 p-4 shadow-md fixed w-full z-10">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold">TechStart</a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="#home" class="hover:text-red-500">Home</a>
+          <a href="#services" class="hover:text-red-500">Services</a>
+          <a href="#about" class="hover:text-red-500">About Us</a>
+          <a href="#contact" class="hover:text-red-500">Contact</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="hamburger-btn" class="focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <a href="#home" class="block p-4">Home</a>
+        <a href="#services" class="block p-4">Services</a>
+        <a href="#about" class="block p-4">About Us</a>
+        <a href="#contact" class="block p-4">Contact</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen bg-gradient-to-r from-blue-500 to-red-500 text-white py-20 flex items-center"
+    >
+      <div
+        class="container mx-auto flex flex-col-reverse md:flex-row items-center"
+      >
+        <div class="w-full md:w-1/2 text-center md:text-left px-8">
+          <h1 class="text-5xl font-bold mb-4">
+            Innovate Your Business with AI
+          </h1>
+          <p class="text-lg mb-6">
+            Empowering startups to grow and scale through innovative tech
+            solutions.
+          </p>
+          <a
+            href="#services"
+            class="bg-white text-red-500 px-6 py-2 rounded-full shadow-lg"
+            >Get Started</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section
+      id="services"
+      class="min-h-screen bg-gray-50 dark:bg-gray-800 py-20"
+    >
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-10">Our Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="icon1.png" alt="Feature 1" class="w-12 h-12 mx-auto" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">AI Integration</h3>
+            <p>
+              Seamlessly integrate AI solutions to automate and enhance your
+              business operations.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="icon2.png" alt="Feature 2" class="w-12 h-12 mx-auto" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Data Analytics</h3>
+            <p>
+              Analyze business data for better decision-making and improved
+              productivity.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="icon3.png" alt="Feature 3" class="w-12 h-12 mx-auto" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Cloud Services</h3>
+            <p>
+              Move your operations to the cloud for more scalability and
+              cost-effectiveness.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="icon4.png" alt="Feature 4" class="w-12 h-12 mx-auto" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Automation</h3>
+            <p>
+              Automate workflows and minimize manual tasks to improve
+              efficiency.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="icon3.png" alt="Feature 3" class="w-12 h-12 mx-auto" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Cloud Services</h3>
+            <p>
+              Move your operations to the cloud for more scalability and
+              cost-effectiveness.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="icon3.png" alt="Feature 3" class="w-12 h-12 mx-auto" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Cloud Services</h3>
+            <p>
+              Move your operations to the cloud for more scalability and
+              cost-effectiveness.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="icon3.png" alt="Feature 3" class="w-12 h-12 mx-auto" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Cloud Services</h3>
+            <p>
+              Move your operations to the cloud for more scalability and
+              cost-effectiveness.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="icon3.png" alt="Feature 3" class="w-12 h-12 mx-auto" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Cloud Services</h3>
+            <p>
+              Move your operations to the cloud for more scalability and
+              cost-effectiveness.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <img src="icon3.png" alt="Feature 3" class="w-12 h-12 mx-auto" />
+            </div>
+            <h3 class="text-xl font-bold mb-2">Cloud Services</h3>
+            <p>
+              Move your operations to the cloud for more scalability and
+              cost-effectiveness.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="about" class="min-h-screen bg-white dark:bg-gray-900 py-20">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-10">What Our Clients Say</h2>
+        <div class="relative">
+          <div class="carousel">
+            <div class="carousel-item">
+              <img
+                src="profile1.png"
+                alt="Client 1"
+                class="w-16 h-16 rounded-full mx-auto mb-4"
+              />
+              <h3 class="font-bold">John Doe</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                CEO, Company Inc.
+              </p>
+              <p class="italic">
+                "TechStart has transformed our business with its innovative
+                solutions!"
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="profile1.png"
+                alt="Client 1"
+                class="w-16 h-16 rounded-full mx-auto mb-4"
+              />
+              <h3 class="font-bold">John Doe</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                CEO, Company Inc.
+              </p>
+              <p class="italic">
+                "TechStart has transformed our business with its innovative
+                solutions!"
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="profile1.png"
+                alt="Client 1"
+                class="w-16 h-16 rounded-full mx-auto mb-4"
+              />
+              <h3 class="font-bold">John Doe</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                CEO, Company Inc.
+              </p>
+              <p class="italic">
+                "TechStart has transformed our business with its innovative
+                solutions!"
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="profile1.png"
+                alt="Client 1"
+                class="w-16 h-16 rounded-full mx-auto mb-4"
+              />
+              <h3 class="font-bold">John Doe</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                CEO, Company Inc.
+              </p>
+              <p class="italic">
+                "TechStart has transformed our business with its innovative
+                solutions!"
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="profile1.png"
+                alt="Client 1"
+                class="w-16 h-16 rounded-full mx-auto mb-4"
+              />
+              <h3 class="font-bold">John Doe</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                CEO, Company Inc.
+              </p>
+              <p class="italic">
+                "TechStart has transformed our business with its innovative
+                solutions!"
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="profile1.png"
+                alt="Client 1"
+                class="w-16 h-16 rounded-full mx-auto mb-4"
+              />
+              <h3 class="font-bold">John Doe</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                CEO, Company Inc.
+              </p>
+              <p class="italic">
+                "TechStart has transformed our business with its innovative
+                solutions!"
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="profile1.png"
+                alt="Client 1"
+                class="w-16 h-16 rounded-full mx-auto mb-4"
+              />
+              <h3 class="font-bold">John Doe</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                CEO, Company Inc.
+              </p>
+              <p class="italic">
+                "TechStart has transformed our business with its innovative
+                solutions!"
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="profile1.png"
+                alt="Client 1"
+                class="w-16 h-16 rounded-full mx-auto mb-4"
+              />
+              <h3 class="font-bold">John Doe</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                CEO, Company Inc.
+              </p>
+              <p class="italic">
+                "TechStart has transformed our business with its innovative
+                solutions!"
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="profile1.png"
+                alt="Client 1"
+                class="w-16 h-16 rounded-full mx-auto mb-4"
+              />
+              <h3 class="font-bold">John Doe</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                CEO, Company Inc.
+              </p>
+              <p class="italic">
+                "TechStart has transformed our business with its innovative
+                solutions!"
+              </p>
+            </div>
+            <!-- Repeat for 8 testimonials -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section
+      id="pricing"
+      class="min-h-screen bg-gray-50 dark:bg-gray-800 py-20"
+    >
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-10">Choose Your Plan</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4">Basic</h3>
+            <p class="text-2xl font-bold">$19/mo</p>
+            <ul class="text-left list-disc pl-6">
+              <li>5 Projects</li>
+              <li>Basic Support</li>
+              <li>Access to Tools</li>
+            </ul>
+            <a
+              href="#"
+              class="mt-4 block bg-blue-500 text-white py-2 rounded-full"
+              >Sign Up</a
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg border-4 border-blue-500"
+          >
+            <h3 class="text-xl font-bold mb-4">Pro</h3>
+            <p class="text-2xl font-bold">$49/mo</p>
+            <ul class="text-left list-disc pl-6">
+              <li>Unlimited Projects</li>
+              <li>Priority Support</li>
+              <li>Access to All Tools</li>
+            </ul>
+            <a
+              href="#"
+              class="mt-4 block bg-red-500 text-white py-2 rounded-full"
+              >Sign Up</a
+            >
+          </div>
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4">Enterprise</h3>
+            <p class="text-2xl font-bold">$99/mo</p>
+            <ul class="text-left list-disc pl-6">
+              <li>Custom Solutions</li>
+              <li>Dedicated Support</li>
+              <li>All Premium Features</li>
+            </ul>
+            <a
+              href="#"
+              class="mt-4 block bg-blue-500 text-white py-2 rounded-full"
+              >Sign Up</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center md:text-left">
+        <!-- Contact Info -->
+        <div class="flex flex-wrap justify-between mb-6">
+          <div class="w-full md:w-1/3">
+            <h4 class="text-xl font-bold mb-4">Contact Information</h4>
+            <p>123 Tech Street, Malang, Indonesia</p>
+            <p>
+              Email:
+              <a
+                href="mailto:info@techstart.com"
+                class="text-blue-500 hover:underline"
+                >info@techstart.com</a
+              >
+            </p>
+            <p>
+              Phone:
+              <a href="tel:+623411234567" class="text-blue-500 hover:underline"
+                >(+62) 341 123 4567</a
+              >
+            </p>
+          </div>
+          <!-- Social Media Links -->
+          <div class="w-full md:w-1/3">
+            <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+            <div class="flex space-x-6 justify-center md:justify-start">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                class="hover:text-blue-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M22 12c0-5.514-4.486-10-10-10S2 6.486 2 12c0 5.018 3.676 9.158 8.437 9.878v-6.988h-2.54V12h2.54v-1.715c0-2.507 1.493-3.885 3.779-3.885 1.096 0 2.238.196 2.238.196v2.462h-1.26c-1.243 0-1.63.772-1.63 1.563V12h2.773l-.443 2.89h-2.33v6.988C18.324 21.158 22 17.018 22 12z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                class="hover:text-blue-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19.633 7.997c.013.177.013.355.013.533 0 5.43-4.137 11.686-11.686 11.686-2.33 0-4.503-.68-6.328-1.855.329.038.658.05.987.05 1.93 0 3.71-.658 5.123-1.77-1.802-.037-3.32-1.222-3.843-2.855.253.037.506.063.772.063.37 0 .745-.05 1.09-.138-1.89-.379-3.314-2.048-3.314-4.048v-.05c.555.312 1.204.504 1.897.528-1.12-.75-1.855-2.017-1.855-3.462 0-.763.205-1.477.555-2.093 2.012 2.468 5.021 4.09 8.42 4.268-.068-.305-.101-.627-.101-.96 0-2.32 1.879-4.2 4.2-4.2 1.207 0 2.296.504 3.062 1.318.956-.188 1.859-.536 2.675-1.015-.314.987-.987 1.812-1.86 2.33.85-.1 1.665-.329 2.422-.664-.575.841-1.308 1.576-2.144 2.165z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                class="hover:text-red-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.346 3.608 1.32.975.975 1.258 2.242 1.32 3.608.059 1.267.07 1.647.07 4.84 0 3.196-.012 3.576-.07 4.843-.062 1.367-.345 2.633-1.32 3.609-.975.975-2.242 1.257-3.608 1.318-1.267.059-1.647.071-4.84.071s-3.576-.012-4.843-.071c-1.367-.062-2.633-.344-3.609-1.318-.975-.975-1.257-2.242-1.318-3.609-.059-1.267-.071-1.647-.071-4.843s.012-3.576.071-4.84c.062-1.366.344-2.633 1.318-3.608.975-.974 2.242-1.258 3.609-1.32 1.267-.058 1.647-.07 4.843-.07m0-2.163c-3.259 0-3.67.014-4.947.072-1.563.07-2.968.382-4.1 1.515-1.131 1.132-1.443 2.537-1.514 4.1-.058 1.276-.071 1.688-.071 4.946s.013 3.67.071 4.947c.071 1.563.383 2.968 1.514 4.1 1.132 1.131 2.537 1.444 4.1 1.514 1.277.059 1.688.071 4.947.071s3.67-.013 4.947-.071c1.563-.07 2.968-.383 4.1-1.514 1.131-1.132 1.444-2.537 1.514-4.1.059-1.277.071-1.688.071-4.947s-.012-3.67-.071-4.947c-.07-1.563-.383-2.968-1.514-4.1-1.132-1.131-2.537-1.444-4.1-1.514-1.277-.059-1.688-.071-4.947-.071z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Map Location -->
+          <div class="w-full md:w-1/3">
+            <h4 class="text-xl font-bold mb-4">Our Location</h4>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.622357838679!2d112.61402227441226!3d-7.966615280714681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788288b47eb16f%3A0xe546284d1fd2cc7d!2sSTIKI%20Malang!5e0!3m2!1sid!2sid!4v1694682856498!5m2!1sid!2sid"
+              width="100%"
+              height="200"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div>
+            <a href="#" class="mx-2">Privacy Policy</a>
+            <a href="#" class="mx-2">Terms of Service</a>
+            <a href="#" class="mx-2">Contact</a>
+          </div>
+          <div class="text-sm">&copy; 2024 TechStart. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button
+      id="dark-mode-toggle"
+      class="fixed bottom-4 right-4 bg-gray-500 text-white p-2 rounded-full"
+    >
+      Toggle Dark Mode
+    </button>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
