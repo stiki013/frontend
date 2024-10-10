@@ -1,38 +1,64 @@
-/* Custom Styles for Additional Styling */
-body {
-    font-family: 'Inter', sans-serif;
+/* Custom styles */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #f8f9fa;
   }
   
-  @media (max-width: 768px) {
-    #mobile-menu {
-      display: none;
-    }
+  .hero h1 {
+    font-family: 'Cursive';
+    font-size: 3rem;
   }
   
-  .dark #mobile-menu {
-    background-color: #1f2937;
+  .hero img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
   }
   
-  .bg-gradient-to-r {
-    background: linear-gradient(to right, #3b82f6, #ef4444); /* Redbull colors */
+  .album {
+    direction: rtl;
   }
   
-  .carousel {
+  .footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Custom logo style */
+  #brand-logo {
+    font-family: 'Cursive';
+    font-size: 24px;
+  }
+  
+  /* Carousel background customization */
+  .carousel-background {
+    background-size: cover;
+    background-position: center;
+    height: 500px;
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+    align-items: center;
+    justify-content: flex-start;
   }
   
-  .carousel-item {
-    min-width: 300px;
-    margin-right: 20px;
+  .carousel-caption {
+    left: 10%;
+    bottom: 30%;
+    text-align: left;
   }
   
-  #dark-mode-toggle {
-    z-index: 50;
+  .carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
   }
   
-  .min-h-screen {
-    min-height: 100vh;
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+  
+  .carousel-caption a {
+    margin-top: 10px;
   }
   
