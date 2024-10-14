@@ -1,2 +1,3 @@
-# Frontend
-pertemuan 1 - 4
+# Matakuliah Frontend
+Oleh: Lukas William Djendrawan
+NRP: 231131013
