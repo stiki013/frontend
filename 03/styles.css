@@ -1,0 +1,38 @@
+/* Custom Styles for Additional Styling */
+body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  @media (max-width: 768px) {
+    #mobile-menu {
+      display: none;
+    }
+  }
+  
+  .dark #mobile-menu {
+    background-color: #1f2937;
+  }
+  
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, #3b82f6, #ef4444); /* Redbull colors */
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .carousel-item {
+    min-width: 300px;
+    margin-right: 20px;
+  }
+  
+  #dark-mode-toggle {
+    z-index: 50;
+  }
+  
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
