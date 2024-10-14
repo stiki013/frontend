@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Buah-Buahan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1d1f27;
+            color: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, #29a19c, #1f2c73);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #29a19c;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        header button {
+            padding: 10px;
+            background-color: #29a19c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        header button:hover {
+            background-color: #1f2c73;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .fruit-card {
+            background-color: #272b33;
+            border: none;
+            border-radius: 10px;
+            width: 300px;
+            margin: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fruit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+        }
+
+        .fruit-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+        }
+
+        .fruit-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .fruit-info h3 {
+            margin: 0;
+            color: #29a19c;
+            font-size: 22px;
+        }
+
+        .fruit-info p {
+            margin: 10px 0;
+            color: #b3b3b3;
+        }
+
+        .fruit-info button {
+            background-color: #29a19c;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .fruit-info button:hover {
+            background-color: #1f2c73;
+        }
+
+        .cart-container {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            background-color: #272b33;
+            border: 1px solid #29a19c;
+            padding: 20px;
+            width: 300px;
+            height: 400px;
+            overflow-y: auto;
+            display: none;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .cart-container h2 {
+            margin-top: 0;
+            color: #29a19c;
+        }
+
+        .checkout {
+            background-color: #29a19c;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .checkout:hover {
+            background-color: #1f2c73;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #29a19c;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Toko Buah-Buahan Segar </h1>
+    <input type="text" id="search" placeholder="Cari buah...">
+    <button onclick="toggleCart()">Keranjang Belanja (<span id="cartCount">0</span>)</button>
+</header>
+
+<div class="container" id="fruitContainer">
+    <!-- Buah Apel -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" alt="Apel" onclick="showProductDetail('Apel', 'Vitamin C, Vitamin K', 'Meningkatkan kesehatan jantung, baik untuk pencernaan', 'Malang, Jawa Timur')">
+        <div class="fruit-info">
+            <h3>Apel</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin C, Vitamin K</p>
+            <p><strong>Manfaat:</strong> Meningkatkan kesehatan jantung</p>
+            <p><strong>Ditemukan di:</strong> Malang, Jawa Timur</p>
+            <button onclick="addToCart('Apel')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Pisang -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg" alt="Pisang" onclick="showProductDetail('Pisang', 'Vitamin B6, Vitamin C', 'Sumber energi, membantu pencernaan', 'Lampung, Sumatra')">
+        <div class="fruit-info">
+            <h3>Pisang</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin B6, Vitamin C</p>
+            <p><strong>Manfaat:</strong> Sumber energi</p>
+            <p><strong>Ditemukan di:</strong> Lampung, Sumatra</p>
+            <button onclick="addToCart('Pisang')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Jeruk -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg" alt="Jeruk" onclick="showProductDetail('Jeruk', 'Vitamin C, Vitamin A', 'Meningkatkan sistem kekebalan tubuh', 'Pontianak, Kalimantan')">
+        <div class="fruit-info">
+            <h3>Jeruk</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin C, Vitamin A</p>
+            <p><strong>Manfaat:</strong> Meningkatkan sistem kekebalan tubuh</p>
+            <p><strong>Ditemukan di:</strong> Pontianak, Kalimantan</p>
+            <button onclick="addToCart('Jeruk')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Alpukat -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Avocado_with_cross_section.jpg" alt="Alpukat" onclick="showProductDetail('Alpukat', 'Vitamin E, K, C', 'Menjaga kesehatan kulit, baik untuk jantung', 'Jawa Barat')">
+        <div class="fruit-info">
+            <h3>Alpukat</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin E, K, C</p>
+            <p><strong>Manfaat:</strong> Menjaga kesehatan kulit</p>
+            <p><strong>Ditemukan di:</strong> Jawa Barat</p>
+            <button onclick="addToCart('Alpukat')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Anggur -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Table_grapes_on_white.jpg" alt="Anggur" onclick="showProductDetail('Anggur', 'Vitamin K, C', 'Meningkatkan fungsi otak, menurunkan risiko penyakit jantung', 'Probolinggo, Jawa Timur')">
+        <div class="fruit-info">
+            <h3>Anggur</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin K, C</p>
+            <p><strong>Manfaat:</strong> Meningkatkan fungsi otak</p>
+            <p><strong>Ditemukan di:</strong> Probolinggo, Jawa Timur</p>
+            <button onclick="addToCart('Anggur')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Salak -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Salak.JPG" alt="Salak" onclick="showProductDetail('Salak', 'Vitamin C, Serat', 'Baik untuk kesehatan pencernaan', 'Bali, Indonesia')">
+        <div class="fruit-info">
+            <h3>Salak</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin C, Serat</p>
+            <p><strong>Manfaat:</strong> Baik untuk pencernaan</p>
+            <p><strong>Ditemukan di:</strong> Bali, Indonesia</p>
+            <button onclick="addToCart('Salak')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Durian -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Durian.JPG" alt="Durian" onclick="showProductDetail('Durian', 'Vitamin C, Potassium', 'Meningkatkan kesehatan kulit, sumber energi', 'Medan, Sumatra Utara')">
+        <div class="fruit-info">
+            <h3>Durian</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin C, Potassium</p>
+            <p><strong>Manfaat:</strong> Meningkatkan kesehatan kulit</p>
+            <p><strong>Ditemukan di:</strong> Medan, Sumatra Utara</p>
+            <button onclick="addToCart('Durian')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Mangga -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Mango_fruit.jpg" alt="Mangga" onclick="showProductDetail('Mangga', 'Vitamin A, C, E', 'Baik untuk kesehatan kulit, meningkatkan imunitas', 'Indramayu, Jawa Barat')">
+        <div class="fruit-info">
+            <h3>Mangga</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin A, C, E</p>
+            <p><strong>Manfaat:</strong> Baik untuk kulit</p>
+            <p><strong>Ditemukan di:</strong> Indramayu, Jawa Barat</p>
+            <button onclick="addToCart('Mangga')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Strawberry -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/PerfectStrawberry.jpg" alt="Strawberry" onclick="showProductDetail('Strawberry', 'Vitamin C, Antioksidan', 'Meningkatkan kesehatan kulit, baik untuk imunitas', 'Bandung, Jawa Barat')">
+        <div class="fruit-info">
+            <h3>Strawberry</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin C, Antioksidan</p>
+            <p><strong>Manfaat:</strong> Baik untuk kulit</p>
+            <p><strong>Ditemukan di:</strong> Bandung, Jawa Barat</p>
+            <button onclick="addToCart('Strawberry')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Manggis -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Mangosteen.jpg" alt="Manggis" onclick="showProductDetail('Manggis', 'Vitamin C, Serat', 'Membantu pencernaan, meningkatkan sistem kekebalan tubuh', 'Banyuwangi, Jawa Timur')">
+        <div class="fruit-info">
+            <h3>Manggis</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin C, Serat</p>
+            <p><strong>Manfaat:</strong> Membantu pencernaan</p>
+            <p><strong>Ditemukan di:</strong> Banyuwangi, Jawa Timur</p>
+            <button onclick="addToCart('Manggis')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Kelapa -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Coconut.jpg" alt="Kelapa" onclick="showProductDetail('Kelapa', 'Kalium, Vitamin C', 'Meningkatkan hidrasi, baik untuk kesehatan kulit', 'Karimunjawa, Jawa Tengah')">
+        <div class="fruit-info">
+            <h3>Kelapa</h3>
+            <p><strong>Kandungan Vitamin:</strong> Kalium, Vitamin C</p>
+            <p><strong>Manfaat:</strong> Baik untuk hidrasi</p>
+            <p><strong>Ditemukan di:</strong> Karimunjawa, Jawa Tengah</p>
+            <button onclick="addToCart('Kelapa')">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Buah Nanas -->
+    <div class="fruit-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Pineapple_and_cross_section.jpg" alt="Nanas" onclick="showProductDetail('Nanas', 'Vitamin C, Bromelain', 'Membantu pencernaan, meningkatkan kekebalan tubuh', 'Palembang, Sumatra Selatan')">
+        <div class="fruit-info">
+            <h3>Nanas</h3>
+            <p><strong>Kandungan Vitamin:</strong> Vitamin C, Bromelain</p>
+            <p><strong>Manfaat:</strong> Membantu pencernaan</p>
+            <p><strong>Ditemukan di:</strong> Palembang, Sumatra Selatan</p>
+            <button onclick="addToCart('Nanas')">Beli Sekarang</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Keranjang Belanja -->
+<div class="cart-container" id="cartContainer">
+    <h2>Keranjang Belanja</h2>
+    <ul id="cartItems"></ul>
+    <button class="checkout" onclick="checkout()">Checkout</button>
+</div>
+
+<script>
+    // Menampilkan detail produk
+    function showProductDetail(name, vitamins, benefits, region) {
+        alert(
+            "Nama Buah: " + name + "\n" +
+            "Kandungan Vitamin: " + vitamins + "\n" +
+            "Manfaat: " + benefits + "\n" +
+            "Ditemukan di: " + region
+        );
+    }
+
+    // Menambah produk ke keranjang
+    let cart = [];
+    function addToCart(product) {
+        cart.push(product);
+        document.getElementById("cartCount").innerText = cart.length;
+        alert(product + " telah ditambahkan ke keranjang.");
+        updateCart();
+    }
+
+    // Tampilkan keranjang belanja
+    function toggleCart() {
+        const cartContainer = document.getElementById("cartContainer");
+        cartContainer.style.display = cartContainer.style.display === "block" ? "none" : "block";
+    }
+
+    // Update keranjang
+    function updateCart() {
+        const cartItems = document.getElementById("cartItems");
+        cartItems.innerHTML = "";
+        cart.forEach(function(item) {
+            const li = document.createElement("li");
+            li.innerText = item;
+            cartItems.appendChild(li);
+        });
+    }
+
+    // Checkout
+    function checkout() {
+        alert("Terima kasih telah berbelanja! Keranjang Anda berisi: " + cart.join(", "));
+        cart = [];
+        document.getElementById("cartCount").innerText = 0;
+        updateCart();
+        toggleCart();
+    }
+
+    // Pencarian buah
+    document.getElementById("search").addEventListener("input", function(e) {
+        const query = e.target.value.toLowerCase();
+        const fruitCards = document.getElementsByClassName("fruit-card");
+        Array.from(fruitCards).forEach(function(card) {
+            const fruitName = card.querySelector("h3").innerText.toLowerCase();
+            if (fruitName.includes(query)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
