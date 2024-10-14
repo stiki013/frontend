@@ -1,1 +1,1 @@
-Membuat halaman list buah
+Pertemuan 2 frontend - Membuat halaman list buah
