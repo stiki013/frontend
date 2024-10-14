@@ -1,0 +1,64 @@
+/* Custom styles */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #f8f9fa;
+  }
+  
+  .hero h1 {
+    font-family: 'Cursive';
+    font-size: 3rem;
+  }
+  
+  .hero img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  .album {
+    direction: rtl;
+  }
+  
+  .footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Custom logo style */
+  #brand-logo {
+    font-family: 'Cursive';
+    font-size: 24px;
+  }
+  
+  /* Carousel background customization */
+  .carousel-background {
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .carousel-caption {
+    left: 10%;
+    bottom: 30%;
+    text-align: left;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+  
+  .carousel-caption a {
+    margin-top: 10px;
+  }
+  
